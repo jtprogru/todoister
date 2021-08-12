@@ -4,7 +4,7 @@ from typing import List
 from fastapi import APIRouter
 from fastapi.params import Depends
 
-from app.database import SessionLocal
+from app.core import SessionLocal
 from app.schemas import User
 from app import services
 

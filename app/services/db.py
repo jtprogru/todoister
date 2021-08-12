@@ -1,4 +1,4 @@
-from app.database import Base, SessionLocal, engine
+from app.core import Base, SessionLocal, engine
 
 
 async def create_database():
