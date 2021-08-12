@@ -1,12 +1,17 @@
+#!/usr/bin/env python
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+import uvicorn
 
 from app.core.config import settings
-from .router import base_router
+from app.router import base_router
 
 
 def get_application():
-    _app = FastAPI(title=settings.PROJECT_NAME)
+    _app = FastAPI(
+        title=settings.PROJECT_NAME,
+        description=settings.PROJECT_DESCRIPTION,
+        )
 
     _app.add_middleware(
         CORSMiddleware,
