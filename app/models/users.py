@@ -2,7 +2,6 @@ from datetime import datetime
 from sqlalchemy import Column, String, Integer, Boolean, DateTime, ForeignKey
 from sqlalchemy.orm import relationship
 from app import Base
-from .todos import Todo
 
 
 class User(Base):
@@ -15,4 +14,4 @@ class User(Base):
     email = Column(String(length=128), unique=True, index=True, comment="User email")
     is_superuser = Column(Boolean, default=False, comment="Is a SuperUser?")
 
-    todos = Column(ForeignKey, relationship="Todo", back_populates="owner")
+    todos = relationship("Todo", back_populates="owner")

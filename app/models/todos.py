@@ -1,5 +1,7 @@
 from datetime import datetime
 from sqlalchemy import Column, String, Integer, Boolean, DateTime, ForeignKey
+from sqlalchemy.orm import relationship
+
 from app import Base
 
 
@@ -13,4 +15,4 @@ class Todo(Base):
     resolved_date = Column(DateTime, default=datetime.utcnow(), comment="Date when resolved")
 
     owner_id = Column(Integer, ForeignKey('users.id'))
-    owner = Column(ForeignKey, relationship="Todo", back_populates="todos")
+    owner = relationship("User", back_populates="todos")
