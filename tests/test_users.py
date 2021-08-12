@@ -22,8 +22,6 @@ def test_create_user():
         json=default_user_data()
     )
 
-    # print(response.json())
-
     assert response.status_code == 201
     assert response.json() == {"username": "vasya","email": "vasya@email.com"}
 

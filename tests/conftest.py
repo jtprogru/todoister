@@ -2,8 +2,6 @@ import pytest
 from fastapi.testclient import TestClient
 
 from app.main import app
-from app.services.db import create_database
-
 client = TestClient(app)
 
 
