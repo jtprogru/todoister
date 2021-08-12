@@ -2,7 +2,7 @@ from datetime import datetime
 from sqlalchemy import Column, String, Integer, Boolean, DateTime, ForeignKey
 from sqlalchemy.orm import relationship
 
-from app import Base
+from app.core import Base
 
 
 class Todo(Base):

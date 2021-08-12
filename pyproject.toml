@@ -11,6 +11,7 @@ SQLAlchemy = "^1.4.22"
 uvicorn = "^0.14.0"
 pydantic = { extras = ["dotenv"], version = "^1.8.2" }
 passlib = { version = "^1.7.4", extras = ["bcrypt"] }
+alembic = "^1.6.5"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.4"
