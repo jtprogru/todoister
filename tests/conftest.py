@@ -1,16 +1,13 @@
 import pytest
+from _pytest import monkeypatch
 from fastapi.testclient import TestClient
-
 from app.main import app
-client = TestClient(app)
 
 
 @pytest.fixture
-def user(mixer):
-    return mixer.blend(
-        'app.models.users.User',
-        username='vasya',
-        email="vasya@email.com",
-        password="SuperSecretPassw0rD",
-        registered_datetime="2041-08-12T00:00:00.000Z"
-    )
+def client():
+    mp = monkeypatch.MonkeyPatch()
+    mp.setenv('DATABASE_URI', 'sqlite:///./test.sqlite')
+    client = TestClient(app)
+
+    yield client
