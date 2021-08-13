@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-import uvicorn
 
 from app.core.config import settings
 from app.router import base_router
