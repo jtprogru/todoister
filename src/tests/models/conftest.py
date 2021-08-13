@@ -6,7 +6,7 @@ from sqlalchemy.orm import sessionmaker
 from app.core import Base as TestBase
 from app.main import app
 from app.services import get_db
-from app import models
+
 
 SQLALCHEMY_DATABASE_URL = "sqlite:///./test.sqlite"
 
@@ -30,32 +30,4 @@ def override_get_db():
 app.dependency_overrides[get_db] = override_get_db
 
 
-@pytest.fixture
-def client():
-    tc = TestClient(app)
 
-    yield tc
-
-
-@pytest.fixture
-def default_user_data():
-    """Default user for testing"""
-    return {
-        "username": "kamaz",
-        "email": "kamaz@email.com",
-        "password": "SuperSecretPassw0rD",
-        "registered_datetime": "2041-08-12T00:00:00.000Z"
-    }
-
-
-@pytest.fixture
-def mocked_user_model():
-    user = models.User(
-        id=1,
-        username="kamaz",
-        email="kamaz@email.com",
-        password="SuperSecretPassw0rD",
-        registered_datetime="2041-08-12T00:00:00.000Z",
-        is_superuser=False
-    )
-    return user

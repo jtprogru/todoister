@@ -1,11 +1,11 @@
 from datetime import datetime
-from sqlalchemy import Column, String, Integer, Boolean, DateTime, ForeignKey
-from sqlalchemy.orm import relationship
+from sqlalchemy import Column, String, Integer, Boolean, DateTime, ForeignKey  # type: ignore
+from sqlalchemy.orm import relationship  # type: ignore
 from app.core import Base
 
 
 class User(Base):
-    __tablename__ = "users"
+    __tablename__ = "users_router"
 
     id = Column(Integer, primary_key=True, unique=True, index=True, comment="ID")
     username = Column(String(length=64), unique=True, index=True, comment="Username")

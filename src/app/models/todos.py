@@ -1,6 +1,6 @@
-from datetime import datetime
-from sqlalchemy import Column, String, Integer, Boolean, DateTime, ForeignKey
-from sqlalchemy.orm import relationship
+from datetime import datetime 
+from sqlalchemy import Column, String, Integer, Boolean, DateTime, ForeignKey  # type: ignore
+from sqlalchemy.orm import relationship  # type: ignore
 
 from app.core import Base
 
@@ -14,5 +14,5 @@ class Todo(Base):
     created_date = Column(DateTime, default=datetime.utcnow(), comment="Date when created")
     resolved_date = Column(DateTime, default=datetime.utcnow(), comment="Date when resolved")
 
-    owner_id = Column(Integer, ForeignKey('users.id'))
+    owner_id = Column(Integer, ForeignKey('users_router.id'))
     owner = relationship("User", back_populates="todos")

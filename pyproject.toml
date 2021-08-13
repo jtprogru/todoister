@@ -21,6 +21,13 @@ pytest-mock = "^3.6.1"
 requests = "^2.26.0"
 pytest-asyncio = "^0.15.1"
 httpx = "^0.18.2"
+requests-mock = "^1.9.3"
+pytest-colordots = "^1.1"
+pytest-emoji = "^0.2.0"
+pytest-fastapi = "^0.1.0"
+pytest-schema = "^0.1.0"
+pytest-sqlalchemy = "^0.2.1"
+pytest-freezegun = "^0.4.2"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
@@ -32,19 +39,24 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.pytest.ini_options]
 filterwarnings = "error"
+python_files = "test*.py"
+#markers = [
+#  "freeze_time: freezing time marker (pytest-freezegun does not register it)",
+#]
 addopts = '''
-  -v
+  --verbose
+  --emoji
   --strict-markers
   --tb=short
 '''
 testpaths = [
-    "tests",
+    "src/tests",
 ]
 env = [
   "SECRET_KEY=secret",
   "PROJECT_NAME=todoister",
-  "SERVER_HOST=0.0.0.0",
-  "SERVER_PORT=8000",
+  "SERVER_HOST=127.0.0.1",
+  "SERVER_PORT=8089",
   "LOG_LEVEL=debug",
   "DEBUG=true",
   "DATABASE_URI=sqlite:///./test.sqlite"
