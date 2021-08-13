@@ -19,11 +19,9 @@ async def get_users_list(db: SessionLocal = Depends(get_db)):
     return await services.get_users_list(db=db)
 
 
-
 @users_router.get("/{user_id}", response_model=Optional[User])
 async def get_single_user(user_id:  int, db: SessionLocal = Depends(get_db)):
     return await services.get_user(db=db, user_id=user_id)
-
 
 
 @users_router.post("/", response_model=User, status_code=201)
