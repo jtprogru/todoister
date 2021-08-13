@@ -11,7 +11,6 @@ class User(BaseModel):
 
 
 class UserCreate(User):
-    username: str
     password: str
     registered_datetime: datetime
 
