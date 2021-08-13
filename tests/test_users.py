@@ -1,27 +1,22 @@
-from tests.conftest import user
 import pytest
-from fastapi.testclient import TestClient
-
-from app.main import app
-
-client = TestClient(app)
-
-def default_user_data():
-    """Data used during purchase tests. Shortcut just to save typing time"""
-    return {
-            "username": "kamaz",
-            "email": "kamaz@email.com",
-            "password": "SuperSecretPassw0rD",
-            "registered_datetime": "2041-08-12T00:00:00.000Z"
-            }
+from app.models import User
 
 
-def test_create_user():
-    response = client.post(
-        "/api/v1/users/",
-        json=default_user_data()
-    )
+@pytest.mark.xfail
+def test_get_users_list(client):
+    """Получение списка всех пользователей"""
+    response = client.get("/api/v1/users")
 
-    assert response.status_code == 201
-    assert response.json() == {"username": "vasya","email": "vasya@email.com"}
+    assert response.status_code == 200
+    assert isinstance(response.json(), list)
 
+
+def test_user_model(mocked_user_model):
+    user_model = mocked_user_model
+
+    assert user_model.id == 1
+    assert user_model.username == "kamaz"
+    assert user_model.email == "kamaz@email.com"
+    assert user_model.registered_datetime == "2041-08-12T00:00:00.000Z"
+    assert user_model.is_superuser is False
+    assert isinstance(user_model, User)
