@@ -23,8 +23,6 @@ pytest-asyncio = "^0.15.1"
 httpx = "^0.18.2"
 requests-mock = "^1.9.3"
 pytest-colordots = "^1.1"
-pytest-emoji = "^0.2.0"
-pytest-fastapi = "^0.1.0"
 pytest-schema = "^0.1.0"
 pytest-sqlalchemy = "^0.2.1"
 pytest-freezegun = "^0.4.2"
@@ -45,7 +43,6 @@ python_files = "test*.py"
 #]
 addopts = '''
   --verbose
-  --emoji
   --strict-markers
   --tb=short
 '''
