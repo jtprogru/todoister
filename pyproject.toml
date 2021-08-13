@@ -33,6 +33,7 @@ build-backend = "poetry.core.masonry.api"
 [tool.pytest.ini_options]
 filterwarnings = "error"
 addopts = '''
+  -v
   --strict-markers
   --tb=short
 '''
