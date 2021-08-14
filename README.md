@@ -45,6 +45,13 @@ Start the server
 poetry run ./run.py
 ```
 
+Alternative run server
+
+```bash
+cd src
+uvicorn app.main:app --reload --env-file .env
+```
+
 ## FAQ
 
 ### 1. How generate requirements.txt?
