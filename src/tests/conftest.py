@@ -1,4 +1,5 @@
 import pytest
+import os
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
@@ -7,7 +8,7 @@ from app.main import app
 from app import models
 from app.services import get_db
 
-SQLALCHEMY_DATABASE_URL = "sqlite:///./test.sqlite"
+SQLALCHEMY_DATABASE_URL = "sqlite:////tmp/test.sqlite"
 
 test_engine = create_engine(
     SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False}
@@ -15,18 +16,25 @@ test_engine = create_engine(
 TestingSessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=test_engine)
 
 
-Base.metadata.create_all(bind=test_engine)
+@pytest.fixture(autouse=True)
+def prepare_and_cleaning_env():
+    Base.metadata.create_all(bind=test_engine)
 
+    def override_get_db():
+        try:
+            test_db = TestingSessionLocal()
+            yield test_db
+        finally:
+            test_db.close()
 
-def override_get_db():
-    try:
-        test_db = TestingSessionLocal()
-        yield test_db
-    finally:
-        test_db.close()
+    app.dependency_overrides[get_db] = override_get_db
 
+    yield
 
-app.dependency_overrides[get_db] = override_get_db
+    if os.path.exists("/tmp/test.sqlite"):
+        os.remove("/tmp/test.sqlite")
+    else:
+        print("Can not delete the file as it doesn't exists")
 
 
 @pytest.fixture

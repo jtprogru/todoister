@@ -56,5 +56,5 @@ env = [
   "SERVER_PORT=8089",
   "LOG_LEVEL=debug",
   "DEBUG=true",
-  "DATABASE_URI=sqlite:///./test.sqlite"
+  "DATABASE_URI=sqlite:////tmp/test.sqlite"
 ]
