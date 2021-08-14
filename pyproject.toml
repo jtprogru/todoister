@@ -50,6 +50,7 @@ addopts = '''
 testpaths = [
     "src/tests",
 ]
+mock_use_standalone_module = true
 env = [
   "SECRET_KEY=secret",
   "PROJECT_NAME=todoister",
