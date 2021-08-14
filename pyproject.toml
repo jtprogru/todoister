@@ -26,6 +26,7 @@ pytest-colordots = "^1.1"
 pytest-schema = "^0.1.0"
 pytest-sqlalchemy = "^0.2.1"
 pytest-freezegun = "^0.4.2"
+mock = "^4.0.3"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
