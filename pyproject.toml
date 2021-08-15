@@ -5,7 +5,7 @@ description = "Простой проект в духе Todo"
 authors = ["Michael Savin <jtprogru@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.8"
 fastapi = "^0.68.0"
 SQLAlchemy = "^1.4.22"
 uvicorn = "^0.14.0"
@@ -28,6 +28,8 @@ pytest-sqlalchemy = "^0.2.1"
 pytest-freezegun = "^0.4.2"
 mock = "^4.0.3"
 flake8 = "^3.9.2"
+black = {extras = ["d"], version = "^21.7b0"}
+aiohttp = "^3.7.4"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
@@ -69,3 +71,15 @@ env = [
   "DEBUG=true",
   "DATABASE_URI=sqlite:////tmp/test.sqlite"
 ]
+
+[tool.black]
+line-length = 160
+target-version = ['py37', 'py38', 'py39']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  | migrations
+  | venv
+  | .venv
+)/
+'''
