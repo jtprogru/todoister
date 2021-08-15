@@ -1,6 +1,8 @@
 # todoister
 
 [![pytesting workflow](https://github.com/jtprogru/todoister/actions/workflows/main.yml/badge.svg)](https://github.com/jtprogru/todoister/actions/workflows/main.yml) [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+
 
 Simple project written with FastAPI just for fun :smile:
 
@@ -78,19 +80,26 @@ All migrations can be applied by following command:
 alembic upgrade head
 ```
 
-## Running Tests and Flake8
+## Running Tests, Flake8 and Black[d]
 
 To run tests, run the following command
 
 ```bash
 poetry run pytest
 ```
-
+---
 To run flake8 checks, run the following command
 
 ```bash
 poetry run flake8 src/
 ```
+---
+To run black[d] as daemon use following command
+
+```bash
+poetry run blackd --bind-host localhost --bind-port 45484
+```
+And use this plugin for PyCharm – [BlackConnect](https://plugins.jetbrains.com/plugin/14321-blackconnect)
 
 ## Roadmap
 
