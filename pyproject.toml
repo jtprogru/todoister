@@ -27,6 +27,7 @@ pytest-schema = "^0.1.0"
 pytest-sqlalchemy = "^0.2.1"
 pytest-freezegun = "^0.4.2"
 mock = "^4.0.3"
+flake8 = "^3.9.2"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
@@ -39,9 +40,17 @@ build-backend = "poetry.core.masonry.api"
 [tool.pytest.ini_options]
 filterwarnings = "error"
 python_files = "test*.py"
-#markers = [
-#  "freeze_time: freezing time marker (pytest-freezegun does not register it)",
-#]
+norecursedirs = [
+  ".git", ".tox", "venv*", "requirements*"
+]
+
+markers = [
+  "secutiry: all security tests",
+  "models: all models tests",
+  "services: all services tests",
+  "schemas: all schemas tests",
+  "routers: all routers tests",
+]
 addopts = '''
   --verbose
   --strict-markers

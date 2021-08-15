@@ -78,12 +78,18 @@ All migrations can be applied by following command:
 alembic upgrade head
 ```
 
-## Running Tests
+## Running Tests and Flake8
 
 To run tests, run the following command
 
 ```bash
 poetry run pytest
+```
+
+To run flake8 checks, run the following command
+
+```bash
+poetry run flake8 src/
 ```
 
 ## Roadmap
