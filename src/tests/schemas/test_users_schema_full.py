@@ -3,9 +3,9 @@ from pytest_schema import schema
 
 # single user schema
 user = {
-        "username": str,
-        "email": str,
-    }
+    "username": str,
+    "email": str,
+}
 
 # multiple users schema
 users = [user]
@@ -18,14 +18,8 @@ def test_users_endpoint(test_client):
     """
     response = [
         # ✅ Valid
-        {
-            "username": "misha",
-            "email": "misha@email.com",
-        },
-        {
-            "username": "vasya",
-            "email": "vasya@email.com",
-        },
+        {"username": "misha", "email": "misha@email.com",},
+        {"username": "vasya", "email": "vasya@email.com",},
     ]
 
     # response = test_client.get("/api/v1/users/")
@@ -57,4 +51,3 @@ def test_users_endpoint_invalid():
     # Option 2:
     with pytest.raises(Exception):
         schema(users) == response
-

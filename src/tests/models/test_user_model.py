@@ -3,7 +3,7 @@ from app.models import User
 from pydantic import EmailStr
 
 pytestmark = [
-    pytest.mark.freeze_time('2041-08-12 00:00:00'),
+    pytest.mark.freeze_time("2041-08-12 00:00:00"),
 ]
 
 
@@ -21,7 +21,6 @@ def test_user_username(mocked_user_model, default_user_data):
 
 def test_user_email(mocked_user_model, default_user_data):
     """Проверка email"""
-    assert '@' in mocked_user_model.email
+    assert "@" in mocked_user_model.email
     assert isinstance(EmailStr(mocked_user_model.email), EmailStr)
     assert mocked_user_model.email == default_user_data.get("email")
-

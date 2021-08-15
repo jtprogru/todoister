@@ -17,4 +17,6 @@ def test_get_password_hash(default_user_data):
 def test_verify_password(hashed_password, default_user_data):
 
     assert verify_password(default_user_data["password"], hashed_password)
-    assert isinstance(verify_password(default_user_data["password"], hashed_password), bool)
+    assert isinstance(
+        verify_password(default_user_data["password"], hashed_password), bool
+    )

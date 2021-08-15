@@ -8,8 +8,12 @@ import requests_mock
 
 @pytest.fixture
 def mocked_user_create(requests_mock, default_user_data):
-    requests_mock.register_uri('POST', 'http://127.0.0.1:8089/api/v1/users/', text='{"username": "kamaz","email": "kamaz@email.com"}')
-    return requests.post('http://127.0.0.1:8089/api/v1/users/', data=default_user_data)
+    requests_mock.register_uri(
+        "POST",
+        "http://127.0.0.1:8089/api/v1/users/",
+        text='{"username": "kamaz","email": "kamaz@email.com"}',
+    )
+    return requests.post("http://127.0.0.1:8089/api/v1/users/", data=default_user_data)
 
 
 @pytest.fixture

@@ -57,5 +57,5 @@ def mocked_user_model(default_user_data):
         email=default_user_data.get("email"),
         password=default_user_data.get("password"),
         registered_datetime=default_user_data.get("registered_datetime"),
-        is_superuser=False
+        is_superuser=False,
     )

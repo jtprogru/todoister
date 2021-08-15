@@ -1,4 +1,3 @@
-
 from typing import List, Optional, Union
 
 from pydantic import AnyHttpUrl, BaseSettings, validator
@@ -7,9 +6,9 @@ from pydantic import AnyHttpUrl, BaseSettings, validator
 class Settings(BaseSettings):
     PROJECT_NAME: str
     PROJECT_DESCRIPTION: str = "Simple project written with FastAPI"
-    SERVER_HOST: str = '127.0.0.1'
+    SERVER_HOST: str = "127.0.0.1"
     SERVER_PORT: int = 8000
-    LOG_LEVEL: str = 'info'
+    LOG_LEVEL: str = "info"
     BACKEND_CORS_ORIGINS: List[AnyHttpUrl] = []
     DATABASE_URI: Optional[str] = None
     DEBUG: bool = False

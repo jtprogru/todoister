@@ -11,8 +11,7 @@ def get_application():
     Base.metadata.create_all(bind=engine)
 
     _app = FastAPI(
-        title=settings.PROJECT_NAME,
-        description=settings.PROJECT_DESCRIPTION,
+        title=settings.PROJECT_NAME, description=settings.PROJECT_DESCRIPTION,
     )
 
     _app.add_middleware(

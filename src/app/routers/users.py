@@ -8,10 +8,7 @@ from app.core import SessionLocal
 from app.schemas import User
 from app import services
 
-users_router = APIRouter(
-    prefix='/users',
-    tags=["users"],
-)
+users_router = APIRouter(prefix="/users", tags=["users"],)
 
 
 @users_router.get("/", response_model=Optional[List[User]])
@@ -35,4 +32,3 @@ async def create_user(user: UserCreate, db: SessionLocal = Depends(get_db)):
 async def delete_user(user_id: int, db: SessionLocal = Depends(get_db)):
     await services.delete_user_by_id(db=db, user_id=user_id)
     return {"message": f"User with {user_id=} was deleted"}
-
