@@ -3,7 +3,15 @@ version: "3.8"
 services:
   app:
     build: .
-    env_file:
-      - .env
+    environment:
+      PROJECT_NAME: todoister
+      PROJECT_DESCRIPTION: "Простой проект в духе Todo https://github.com/jtprogru/todoister"
+      SERVER_HOST: 0.0.0.0
+      SERVER_PORT: 8000
+      LOG_LEVEL: debug
+      DEBUG: 1
+      DATABASE_URI: sqlite:////tmp/todoister.sqlite
+      JWT_SECRET: 61747e8d440ce19f8416cc491efec9a0125a4c24f3a04da467f1af5430a71204
+
     ports:
       - "8000:8000"
