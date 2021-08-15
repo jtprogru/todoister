@@ -1,5 +1,5 @@
 from datetime import datetime
-from sqlalchemy import Column, String, Integer, Boolean, DateTime, ForeignKey  # type: ignore
+from sqlalchemy import Column, String, Integer, Boolean, DateTime  # type: ignore
 from sqlalchemy.orm import relationship  # type: ignore
 from app.core import Base
 
@@ -15,3 +15,4 @@ class User(Base):
     is_superuser = Column(Boolean, default=False, comment="Is a SuperUser?")
 
     todos = relationship("Todo", back_populates="owner")
+

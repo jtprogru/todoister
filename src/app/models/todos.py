@@ -1,4 +1,4 @@
-from datetime import datetime 
+from datetime import datetime
 from sqlalchemy import Column, String, Integer, Boolean, DateTime, ForeignKey  # type: ignore
 from sqlalchemy.orm import relationship  # type: ignore
 
@@ -13,6 +13,7 @@ class Todo(Base):
     description = Column(String(length=512), comment="Description of Todos")
     created_date = Column(DateTime, default=datetime.utcnow(), comment="Date when created")
     resolved_date = Column(DateTime, default=datetime.utcnow(), comment="Date when resolved")
+    resolved_status = Column(Boolean, default=False, comment="Resolved status")
 
     owner_id = Column(Integer, ForeignKey('users_router.id'))
     owner = relationship("User", back_populates="todos")

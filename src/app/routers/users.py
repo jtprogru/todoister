@@ -21,7 +21,7 @@ async def get_users_list(db: SessionLocal = Depends(get_db)) -> list:
 
 
 @users_router.get("/{user_id}", response_model=Optional[User])
-async def get_user_by_id(user_id:  int, db: SessionLocal = Depends(get_db)):
+async def get_user_by_id(user_id: int, db: SessionLocal = Depends(get_db)):
     return await services.get_user(db=db, user_id=user_id)
 
 

@@ -13,7 +13,7 @@ def get_application():
     _app = FastAPI(
         title=settings.PROJECT_NAME,
         description=settings.PROJECT_DESCRIPTION,
-        )
+    )
 
     _app.add_middleware(
         CORSMiddleware,
