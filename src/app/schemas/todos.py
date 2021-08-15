@@ -11,9 +11,9 @@ class Todo(BaseModel):
 
 
 class TodoCreate(Todo):
-    created_date: datetime
+    created_datetime: datetime
 
 
 class TodoUpdate(Todo):
     id: int
-    resolved_date: datetime
+    resolved_datetime: datetime

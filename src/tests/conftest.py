@@ -10,9 +10,7 @@ from app.services import get_db
 
 SQLALCHEMY_DATABASE_URL = "sqlite:////tmp/test.sqlite"
 
-test_engine = create_engine(
-    SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False}
-)
+test_engine = create_engine(SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False})
 TestingSessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=test_engine)
 
 
@@ -44,8 +42,13 @@ def default_user_data():
         "username": "kamaz",
         "email": "kamaz@email.com",
         "password": "SuperSecretPassw0rD",
-        # "registered_datetime": "2041-08-12T00:00:00.000Z"
     }
+
+
+@pytest.fixture
+def default_todo_data():
+    """Словарь с данными пользователя поумолчанию"""
+    return {"title": "Молоко", "description": "Купить молоко в Ашане 200 литров", "created_datetime": "2041-08-12T00:00:00.000Z"}
 
 
 @pytest.fixture
@@ -58,4 +61,17 @@ def mocked_user_model(default_user_data):
         password=default_user_data.get("password"),
         registered_datetime=default_user_data.get("registered_datetime"),
         is_superuser=False,
+    )
+
+
+@pytest.fixture
+def mocked_todo_model(default_todo_data):
+    """Обект модели Todo с данными поумолчанию"""
+    return models.Todo(
+        id=1,
+        title=default_todo_data.get("title"),
+        description=default_todo_data.get("description"),
+        created_datetime=default_todo_data.get("created_datetime")
+        # owner_id = Column(Integer, ForeignKey("users_router.id"))
+        # owner = relationship("User", back_populates="todos")
     )
