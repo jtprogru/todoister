@@ -30,6 +30,7 @@ mock = "^4.0.3"
 flake8 = "^3.9.2"
 black = {extras = ["d"], version = "^21.7b0"}
 aiohttp = "^3.7.4"
+wemake-python-styleguide = "^0.15.3"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
@@ -73,13 +74,15 @@ env = [
 ]
 
 [tool.black]
-line-length = 160
+line-length = 128
 target-version = ['py37', 'py38', 'py39']
+black_skip_string_normalization = true
 include = '\.pyi?$'
 extend-exclude = '''
 /(
   | migrations
   | venv
   | .venv
+  | tests
 )/
 '''

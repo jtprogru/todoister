@@ -2,6 +2,7 @@
 
 [![pytesting workflow](https://github.com/jtprogru/todoister/actions/workflows/main.yml/badge.svg)](https://github.com/jtprogru/todoister/actions/workflows/main.yml) [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![wemake-python-styleguide](https://img.shields.io/badge/style-wemake-000000.svg)](https://github.com/wemake-services/wemake-python-styleguide)
 
 
 Simple project written with FastAPI just for fun :smile:
@@ -118,6 +119,10 @@ If you have any feedback, please reach out to us at [issues](https://github.com/
 ## Authors
 
 - [@jtprogru](https://www.github.com/jtprogru)
+
+## Contributing
+
+See [CONTRIBUTING.md](docs/CONTRIBUTING.md)
 
 ## License
 
