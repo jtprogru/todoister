@@ -6,6 +6,7 @@ def test_get_users_list(client, status_code_ok):
 
     Args:
         client: pytest fixture
+        status_code_ok: 200 OK status code
     """
     response = client.get('/api/v1/users/')
     assert isinstance(response.json(), list)
@@ -18,6 +19,7 @@ def test_create_user(mocked_user_create, default_user_data, status_code_ok):
     Args:
         mocked_user_create: pytest fixture
         default_user_data: pytest fixture
+        status_code_ok: 200 OK status code
     """
     response = mocked_user_create
 

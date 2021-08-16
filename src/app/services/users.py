@@ -5,7 +5,7 @@ from app import models
 from app import schemas
 
 
-async def get_user(db: Session, user_id: int):
+async def get_user(db: Session, user_id: int) -> models.User:
     return db.query(models.User).filter(models.User.id == user_id).first()
 
 
