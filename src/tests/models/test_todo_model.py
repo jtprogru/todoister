@@ -1,5 +1,6 @@
 import pytest
-from app.models import Todo
+
+from app.models.todos import Todo
 
 pytestmark = [
     pytest.mark.freeze_time("2041-08-12T00:00:00.000Z"),

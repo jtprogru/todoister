@@ -1,6 +1,7 @@
 import pytest
-from app.models import User
 from pydantic import EmailStr
+
+from app.models.users import User
 
 pytestmark = [
     pytest.mark.freeze_time("2041-08-12 00:00:00"),

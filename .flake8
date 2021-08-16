@@ -1,5 +1,5 @@
 [flake8]
-ignore = WPS305
+ignore = WPS305, WPS237
 max-line-length = 128
 exclude =
       migrations,

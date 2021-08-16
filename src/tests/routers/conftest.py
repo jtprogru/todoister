@@ -1,9 +1,9 @@
 import pytest
-from fastapi.testclient import TestClient
-from app.main import get_application
-import pytest
 import requests
 import requests_mock
+from fastapi.testclient import TestClient
+
+from app.main import get_application
 
 
 @pytest.fixture

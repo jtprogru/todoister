@@ -1,6 +1,7 @@
 import pytest
-from app.services.security import get_password_hash, verify_password
 from passlib.context import CryptContext
+
+from app.services.security import get_password_hash, verify_password
 
 
 @pytest.fixture
