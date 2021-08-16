@@ -6,7 +6,7 @@ from sqlalchemy.orm import sessionmaker
 from app.core import Base
 from app.main import app
 from app import models
-from app.services import get_db
+from app.services import db_services
 
 SQLALCHEMY_DATABASE_URL = "sqlite:////tmp/test.sqlite"
 
@@ -25,7 +25,7 @@ def prepare_and_cleaning_env():
         finally:
             test_db.close()
 
-    app.dependency_overrides[get_db] = override_get_db
+    app.dependency_overrides[db_services.get_db] = override_get_db
 
     yield
 
