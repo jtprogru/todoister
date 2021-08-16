@@ -1,5 +1,5 @@
 from datetime import datetime
-from sqlalchemy.orm import Session  # type: ignore
+from sqlalchemy.orm import Session
 
 from app import models
 from app import schemas
@@ -21,7 +21,7 @@ async def get_users_list(db: Session, skip: int = 0, limit: int = 100):
 
 
 async def create_user(db: Session, user: schemas.UserCreate):
-    fake_hashed_password = user.password + "thisisnotsecure"
+    fake_hashed_password = user.password + 'thisisnotsecure'
     db_user = models.User(
         username=user.username,
         registered_datetime=datetime.utcnow(),
