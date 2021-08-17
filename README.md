@@ -126,7 +126,10 @@ If you have any feedback, please reach out to us at [issues](https://github.com/
 
 ## Authors
 
-- [@jtprogru](https://www.github.com/jtprogru)
+- Michael Savin
+  - :octocat: [@jtprogru](https://www.github.com/jtprogru)
+  - :bird: [@jtprogru](https://www.twitter.com/jtprogru)
+  - :moneybag: [savinmi.ru](https://savinmi.ru)
 
 ## Contributing
 
