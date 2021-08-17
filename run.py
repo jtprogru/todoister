@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+"""Альтернативный скрипт запуска."""
 import uvicorn
 
 from app.core import settings
@@ -6,6 +7,7 @@ from app.main import app
 
 
 def main():
+    """Основная функция запуска через uvicorn."""
     uvicorn.run(
         app=app,
         host=settings.server_host,
