@@ -1,11 +1,13 @@
-import pytest
 import os
+
+import pytest
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
+from app.models.todos import Todo
+from app.models.users import User
 from app.core import Base
 from app.main import app
-from app import models
 from app.services import db_services
 
 SQLALCHEMY_DATABASE_URL = "sqlite:////tmp/test.sqlite"
@@ -54,7 +56,7 @@ def default_todo_data():
 @pytest.fixture
 def mocked_user_model(default_user_data):
     """Обект модели User с данными поумолчанию"""
-    return models.User(
+    return User(
         id=1,
         username=default_user_data.get("username"),
         email=default_user_data.get("email"),
@@ -67,7 +69,7 @@ def mocked_user_model(default_user_data):
 @pytest.fixture
 def mocked_todo_model(default_todo_data):
     """Обект модели Todo с данными поумолчанию"""
-    return models.Todo(
+    return Todo(
         id=1,
         title=default_todo_data.get("title"),
         description=default_todo_data.get("description"),

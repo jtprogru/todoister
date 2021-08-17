@@ -7,7 +7,7 @@ from fastapi.params import Depends
 
 from app.core import SessionLocal
 from app.schemas import User, UserCreate
-from app.services import users_services, db_services
+from app.services import db_services, users_services
 
 users_router = APIRouter(
     prefix='/users',
