@@ -1,6 +1,8 @@
 # todoister
 
-[![pytesting workflow](https://github.com/jtprogru/todoister/actions/workflows/main.yml/badge.svg)](https://github.com/jtprogru/todoister/actions/workflows/main.yml) [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
+[![pytesting workflow](https://github.com/jtprogru/todoister/actions/workflows/build-test.yml/badge.svg)](https://github.com/jtprogru/todoister/actions/workflows/build-test.yml)
+[![release](https://github.com/jtprogru/todoister/actions/workflows/release.yml/badge.svg)](https://github.com/jtprogru/todoister/actions/workflows/release.yml)
+[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![wemake-python-styleguide](https://img.shields.io/badge/style-wemake-000000.svg)](https://github.com/wemake-services/wemake-python-styleguide)
 
