@@ -1,4 +1,4 @@
-name: pytesting workflow
+name: release
 
 "on":
   push:
