@@ -36,16 +36,22 @@ Go to the project directory
 cd todoister
 ```
 
+Generate `.env` by this command
+
+```bash
+make default-env
+```
+
 Install dependencies
 
 ```bash
-poetry install
+make install-dev-deps
 ```
 
 Start the server
 
 ```bash
-poetry run ./run.py
+make server
 ```
 
 Alternative run server
