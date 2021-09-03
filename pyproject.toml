@@ -8,7 +8,7 @@ authors = ["Michael Savin <jtprogru@gmail.com>"]
 python = "^3.8"
 fastapi = "^0.68.0"
 SQLAlchemy = "^1.4.22"
-uvicorn = "^0.14.0"
+uvicorn = "^0.15.0"
 pydantic = { extras = ["dotenv"], version = "^1.8.2" }
 passlib = { version = "^1.7.4", extras = ["bcrypt"] }
 alembic = "^1.6.5"
