@@ -6,7 +6,7 @@ authors = ["Michael Savin <jtprogru@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-fastapi = "^0.68.0"
+fastapi = "^0.70.0"
 SQLAlchemy = "^1.4.22"
 uvicorn = "^0.15.0"
 pydantic = { extras = ["dotenv"], version = "^1.8.2" }
